@@ -6,6 +6,10 @@ var _   = require('lodash');
 
 var Legal = require('../models/legal.model');
 
+var Handlebars     = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
+HandlebarsIntl.registerWith(Handlebars);
+
 
 router.get('/', function(req, res) {
 	// Legal.find({'atg_profile':'300980945'},function(err, results){
@@ -17,7 +21,7 @@ router.get('/', function(req, res) {
 	// 	console.log('results', results);
 	// 	// res.render('index', results);
 	// });
-	
+
 
 	 // Set dates
           var today1 = new Date();
@@ -37,7 +41,7 @@ router.get('/', function(req, res) {
 
 
 	Legal.find({
-		// "created_at":{ 
+		// "created_at":{
   //             $gte: preDate,
   //             $lte: todayDate
   //       },
@@ -75,7 +79,7 @@ router.get('/', function(req, res) {
         var totalOptIns = optInMyWineCellar.length + optInLP.length + optInCheckout.length;
 
 	    res.render('index', {
-	      title: 'Terms Reporting',
+	      title: 'Opt-in Terms & Conditions Reporting',
 	      results: results,
 	      totals: results.length,
 	      dedupes: uniques.length,
@@ -87,7 +91,7 @@ router.get('/', function(req, res) {
 	      dateFilter: dateFilter.length,
 	      countTotal: totalOptIns,
 	      helpers: {
-            counter: function (index) { 
+            counter: function (index) {
             	return index + 1;
             }
         }
@@ -95,7 +99,7 @@ router.get('/', function(req, res) {
 		// console.log('results', results);
 		// res.render('index', results);
 	});
-  
+
 });
 
 module.exports = router;

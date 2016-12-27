@@ -2,7 +2,11 @@
 
 <h1>{{title}} </h1>
 
-<h5>{{dateFrom}} - {{dateTo}}</h5>
+<h2>Date Range</h2>
+<ul>
+	<li><b>From:</b> {{formatDate dateFrom}} </li>
+	<li><b>To:</b> {{formatDate dateTo}}</li>
+</ul>
 
 <table class="table table-bordered">
 	<tr>
@@ -18,14 +22,14 @@
 		<td>{{countCheckout}}</td>
 	</tr>
 	<tr>
-		<td>Pulled by Date</td>
+		<td>Totals</td>
 		<td>{{dateFilter}}</td>
 	</tr>
 
 </table>
 <br><br>
 
-<table class="table table-bordered">
+<table class="table table-bordered hidden">
 	<tr>
 	<tr>
 		<td>Total Cumulative</td>
@@ -36,4 +40,3 @@
 		<td>{{dedupes}}</td>
 	</tr>
 </table>
-

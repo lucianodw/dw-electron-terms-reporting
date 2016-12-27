@@ -10,6 +10,7 @@ var exphbs  = require('express-handlebars');
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
+var utils = require('./config/utils');
 
 var mongoose   = require('mongoose');
 
@@ -40,6 +41,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Before any of the relevant routes...
+app.use('/', utils.basicAuth('username', 'password'));
 
 app.use('/', routes);
 app.use('/users', users);
