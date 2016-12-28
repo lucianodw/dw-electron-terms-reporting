@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Before any of the relevant routes...
-app.use('/', utils.basicAuth('username', 'password'));
+// app.use('/', utils.basicAuth('username', 'password'));
 
 app.use('/', routes);
 app.use('/users', users);
