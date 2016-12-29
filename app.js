@@ -1,5 +1,3 @@
-
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,7 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/user');
 var utils = require('./config/utils');
 
-var mongoose   = require('mongoose');
+var mongoose = require('mongoose');
 
 var app = express();
 

@@ -61,22 +61,22 @@ router.get('/', function(req, res) {
 
 
 		var optInLP = _.filter(dateFilter, function(obj) {
-            return obj.section == 'Landing_Page';
-        });
+        return obj.section == 'Landing_Page';
+    });
 
-        var optInMyWineCellar = _.filter(dateFilter, function(obj) {
-            return obj.section == 'My_Wine_Cellar';
-        });
+    var optInMyWineCellar = _.filter(dateFilter, function(obj) {
+        return obj.section == 'My_Wine_Cellar';
+    });
 
-        var optInCheckout = _.filter(dateFilter, function(obj) {
-            return obj.section == 'Main_Checkout';
-        });
+    var optInCheckout = _.filter(dateFilter, function(obj) {
+        return obj.section == 'Main_Checkout';
+    });
 
-        // console.log('dateCheckout', dateCheckout);
+    // console.log('dateCheckout', dateCheckout);
 
 
 
-        var totalOptIns = optInMyWineCellar.length + optInLP.length + optInCheckout.length;
+    var totalOptIns = optInMyWineCellar.length + optInLP.length + optInCheckout.length;
 
 	    res.render('index', {
 	      title: 'Opt-in Terms & Conditions Reporting',
